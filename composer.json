@@ -1,5 +1,5 @@
 {
-    "name": "ahsanshabbir/smartbill",
+    "name": "lostcause/smartbill",
     "description": "SmartBill API wrapper compatible for Laravel",
     "keywords": [
         "smartbill",
@@ -17,6 +17,11 @@
         {
             "name": "Ahsan Shabbir",
             "email": "ahsan.shabbir@wisevision.dev",
+            "role": "Developer"
+        },
+        {
+            "name": "Alex Stanciu",
+            "email": "astanciu@edris.ro",
             "role": "Developer"
         }
     ],
