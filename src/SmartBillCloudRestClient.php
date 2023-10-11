@@ -8,6 +8,8 @@ class SmartBillCloudRestClient
 
     const STATUS_INVOICE_URL = 'https://ws.smartbill.ro:8183/SBORO/api/invoice/paymentstatus';
 
+	const REVERSE_INVOICE_URL = 'https://ws.smartbill.ro:8183/SBORO/api/invoice/reverse';
+
     const PROFORMA_URL = 'https://ws.smartbill.ro:8183/SBORO/api/estimate';
 
     const STATUS_PROFORMA_URL = 'https://ws.smartbill.ro:8183/SBORO/api/estimate/invoices';
@@ -137,8 +139,6 @@ class SmartBillCloudRestClient
             }
 
             throw new \Exception($errorMessage);
-            // empty response
-            $return = '';
         } elseif (false === strpos($url, '/pdf?')) {
             $return = json_decode($return, true);
         }
@@ -160,6 +160,11 @@ class SmartBillCloudRestClient
     {
         return $this->_callServer(self::INVOICE_URL, $data);
     }
+
+	public function createReverseInvoice($data)
+	{
+		return $this->_callServer(self::REVERSE_INVOICE_URL, $data);
+	}
 
     public function createProforma($data)
     {
